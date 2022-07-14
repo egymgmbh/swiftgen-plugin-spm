@@ -4,7 +4,7 @@ import PackagePlugin
 struct SwiftGenBuildToolPlugin: BuildToolPlugin {
     func createBuildCommands(context: PluginContext, target: Target) throws -> [Command] {
         let swiftgen = try context.tool(named: "swiftgen")
-        let config = context.package.directory.appending("swiftgen.yml")
+        let config = context.package.directory.appending(".swiftgen.yml")
         let output = context.pluginWorkDirectory
 
         print("swiftgen: \(swiftgen.path)")
